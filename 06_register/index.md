@@ -1,0 +1,16 @@
+# Register Callbacks
+
+-   Let developers define callback functions to get data for particular charts
+-   In [`server.py`](./server.py):
+    -   Lookup table `Callbacks` maps chart name to callback function
+    -   Decorator function `register(…)` adds entry
+    -   `get_data(…)` uses the chart ID in the query parameters to select a callback function
+-   Note that the decorator doesn't change the function: it just adds it to a lookup table
+-   Getting closer to an application framework that runs application-specific functions
+
+## Run
+
+1.  `python server.py --seed 12345`
+1.  Go to <http://127.0.0.1/5000>
+1.  Change the checkboxes.
+1.  Click the button to fetch data and redisplay chart

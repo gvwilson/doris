@@ -52,6 +52,7 @@ Why is this material free to read?
 
 [conventional]: https://www.conventionalcommits.org/
 [email]: mailto:gvwilson@third-bit.com
+[flask]: https://flask.palletsprojects.com/
 [repo]: https://github.com/gvwilson/doris
 [uv]: https://github.com/astral-sh/uv
 [wilson-greg]: https://third-bit.com/

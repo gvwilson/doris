@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fetch Data</title>
+<link href="../shared/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="../shared/dashboard.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<nav>
+<div class="row">
+<div class="col-2 left">
+<a href="../">Home</a>
+</div>
+<div class="col-10 right">
+<a href="../license.html">License</a>
+	  ·
+	  <a href="../bibliography.html">Bibliography</a>
+	  ·
+	  <a href="../glossary.html">Glossary</a>
+</div>
+</div>
+</nav>
+<main>
+<h1>Fetch Data</h1>
+<ul>
+<li><a href="./server.py.html"><code>server.py</code></a>: page initially has button and empty <code>div</code></li>
+<li>When button clicked, JavaScript in <a href="static/dashboard.js.html"><code>static/dashboard.js</code></a>
+    sends a <a href="../glossary.html#http-get"><code>GET</code></a> to a new <a href="../glossary.html#route">route</a> in the <a href="https://flask.palletsprojects.com/">Flask</a> server<ul>
+<li>An <a href="../glossary.html#async-operation">asynchronous</a> function</li>
+</ul>
+</li>
+<li>Response is JSON containing HTML string representation of table<ul>
+<li>Have to do some substring operations to extract it from what the dataframe generates</li>
+</ul>
+</li>
+<li>Assign that string to the inner HTML of the aforementioned <code>div</code></li>
+</ul>
+<h2>Run</h2>
+<ol>
+<li><code>python server.py --seed 12345</code></li>
+<li>Go to <a href="http://127.0.0.1/5000">http://127.0.0.1/5000</a></li>
+<li>Click the button to fetch and display HTML</li>
+</ol>
+</main>
+<footer>
+<a href="../">Doris</a>
+      copyright © 2024
+      <a href="../contributing.html#contributors">the authors</a>
+</footer>
+</body>
+</html>

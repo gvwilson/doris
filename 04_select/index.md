@@ -1,6 +1,6 @@
 # Select Data
 
--   [`server.py`](./server.py) creates a form with checkboxes for every sex in the data
+-   [`server.py`](./server.py) creates a [form](g:form) with checkboxes for every sex in the data
 -   Add `onload` handler to `body` element to display chart when browser first loads page
     -   Use the default settings in the form to ensure consistent behavior
 -   [`static/dashboard.js`](static/dashboard.js) turns form data into query parameters and appends them to the URL

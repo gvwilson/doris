@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>03_chart/server.py</title>
+<link href="../shared/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="../shared/dashboard.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<nav>
+<div class="row">
+<div class="col-2 left">
+<a href="../">Home</a>
+</div>
+<div class="col-10 right">
+<a href="../license.html">License</a>
+	  ·
+	  <a href="../bibliography.html">Bibliography</a>
+	  ·
+	  <a href="../glossary.html">Glossary</a>
+</div>
+</div>
+</nav>
+<main>
+<h1>03_chart/server.py</h1>
+<pre><code>"""Display chart instead of table."""
+
+from flask import Flask
+from flask_cors import CORS
+import htpy as h
+from pathlib import Path
+
+from static.shared.datagen import datagen
+from static.shared.util import parse_args
+
+
+TITLE = "Doris"
+
+
+def create_app(data):
+    """Create Flask application."""
+    app = Flask(TITLE, static_folder=Path("static").resolve(), static_url_path="/static")
+    CORS(app)
+
+    @app.get("/")
+    def get_root():
+        """Display home page."""
+        return str(h.html[
+            make_head(),
+            h.body[
+                h.h1[TITLE],
+                h.p[
+                    h.button(type="button", onclick="display()")["display"],
+                ],
+                h.div(".chart-container")[
+                    h.svg("#chart"),
+                ],
+            ],
+        ])
+
+    @app.get("/data")
+    def get_data():
+        """Get weight and length as JSON."""
+        rows = [
+            {"x": r["weight"], "y": r["length"]} for r in data.rows(named=True)
+        ]
+        return {
+            "data": {
+                "datasets": [{
+                    "label": "data",
+                    "data": rows,
+                }]
+            }
+        }
+
+    return app
+
+
+def make_head():
+    """Make head of page."""
+    return h.head[
+        h.title[TITLE],
+        h.link(rel="icon", type="image/x-icon", href="/static/shared/favicon.ico"),
+        h.link(rel="stylesheet", href="/static/shared/dashboard.css"),
+        h.script(src="/static/shared/runtime.js"),
+        h.script(src="/static/shared/chart.xkcd.min.js"),
+        h.script(src="/static/dashboard.js"),
+    ]
+
+
+if __name__ == "__main__":
+    options = parse_args()
+    data = datagen(options.seed)
+    app = create_app(data)
+    app.run()
+</code></pre>
+</main>
+<footer>
+<a href="../">Doris</a>
+      copyright © 2024
+      <a href="../contributing.html#contributors">the authors</a>
+</footer>
+</body>
+</html>

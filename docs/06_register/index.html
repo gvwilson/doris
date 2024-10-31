@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Register Callbacks</title>
+<link href="../shared/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="../shared/dashboard.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<nav>
+<div class="row">
+<div class="col-2 left">
+<a href="../">Home</a>
+</div>
+<div class="col-10 right">
+<a href="../license.html">License</a>
+	  ·
+	  <a href="../bibliography.html">Bibliography</a>
+	  ·
+	  <a href="../glossary.html">Glossary</a>
+</div>
+</div>
+</nav>
+<main>
+<h1>Register Callbacks</h1>
+<ul>
+<li>Let developers define callback functions to get data for particular charts</li>
+<li>In <a href="./server.py.html"><code>server.py</code></a>:<ul>
+<li>Lookup table <code>Callbacks</code> maps chart name to callback function</li>
+<li>Decorator function <code>register(…)</code> adds entry</li>
+<li><code>get_data(…)</code> uses the chart ID in the query parameters to select a callback function</li>
+</ul>
+</li>
+<li>Note that the decorator doesn't change the function: it just adds it to a lookup table</li>
+<li>Getting closer to an application framework that runs application-specific functions</li>
+</ul>
+<h2>Run</h2>
+<ol>
+<li><code>python server.py --seed 12345</code></li>
+<li>Go to <a href="http://127.0.0.1/5000">http://127.0.0.1/5000</a></li>
+<li>Change the checkboxes.</li>
+<li>Click the button to fetch data and redisplay chart</li>
+</ol>
+</main>
+<footer>
+<a href="../">Doris</a>
+      copyright © 2024
+      <a href="../contributing.html#contributors">the authors</a>
+</footer>
+</body>
+</html>

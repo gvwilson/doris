@@ -26,6 +26,16 @@ dependencies = [
     "flask",
     "flask-cors",
     "htpy",
+    "mccole",
     "polars",
     "ruff",
 ]
+
+[tool.mccole]
+skips = ["templates"]
+
+[tool.mccole.renames]
+"CODE_OF_CONDUCT.md" = "code_of_conduct.md"
+"CONTRIBUTING.md" = "contributing.md"
+"LICENSE.md" = "license.md"
+"README.md" = "index.md"

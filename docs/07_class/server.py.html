@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>07_class/server.py</title>
+<link href="../shared/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="../shared/dashboard.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<nav>
+<div class="row">
+<div class="col-2 left">
+<a href="../">Home</a>
+</div>
+<div class="col-10 right">
+<a href="../license.html">License</a>
+	  ·
+	  <a href="../bibliography.html">Bibliography</a>
+	  ·
+	  <a href="../glossary.html">Glossary</a>
+</div>
+</div>
+</nav>
+<main>
+<h1>07_class/server.py</h1>
+<pre><code>"""Register callback functions to handle chart updates."""
+
+from flask import request
+import htpy as h
+from pathlib import Path
+
+from static.shared.datagen import datagen
+from static.shared.util import parse_args, select_data
+
+from doris import Doris
+
+
+def create_app(data):
+    """Create Flask application."""
+    app = Doris(data, static_folder=Path("static").resolve(), static_url_path="/static")
+
+    @app.get("/")
+    def get_root():
+        """Display home page."""
+        return app.make_page(
+            h.h1[app.title],
+            app.make_chart("example"),
+            make_controls(app, data, "example"),
+        )
+
+    @app.register("example")
+    def handle_example(data):
+        """Callback handler for example chart."""
+        return [
+            {"label": key, "data": select_data(data, "sex", key, x="weight", y="length")}
+            for key in request.args.keys()
+            if not key.startswith("_")
+        ]
+
+    return app
+
+
+def make_controls(app, data, name):
+    """Create form controls for chart."""
+    buttons = []
+    for sex in data["sex"].unique().to_list():
+        buttons.append(h.label(for_=sex)[sex])
+        buttons.append(
+            h.input(type="checkbox", id=f"check-{name}-{sex}", name=sex, value=sex, checked=True)
+        )
+    return app.make_controls(name, buttons)
+
+
+if __name__ == "__main__":
+    options = parse_args()
+    data = datagen(options.seed)
+    app = create_app(data)
+    app.run()
+</code></pre>
+</main>
+<footer>
+<a href="../">Doris</a>
+      copyright © 2024
+      <a href="../contributing.html#contributors">the authors</a>
+</footer>
+</body>
+</html>

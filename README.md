@@ -1,6 +1,7 @@
 # doris: a minimal dashboard engine
 
 This project shows learners how to build a dashboard creator like [Dash][dash]
+([Schroeder2022](b:Schroeder2022))
 using [Flask][flask],
 [htpy][htpy],
 [Polars][polars],

@@ -10,7 +10,17 @@ All contributors must abide by our [Code of Conduct](./CODE_OF_CONDUCT.md).
 -   Create a virtual environment by running `uv venv` in the root directory.
 -   Activate it by running `source .venv/bin/activate` in your shell.
 -   Install dependencies by running `uv pip install -r pyproject.toml`.
--   See the `index.md` file in each lesson for guidance.
+
+## Operation
+
+-   Run `make` in the root directory to display operations:
+    -   `make commands`: show available commands
+    -   `make clean`: clean up
+    -   `make build`: regenerate HTML in `./docs`
+    -   `make lint`: check code and project
+    -   `make serve`: serve generated HTML
+    -   `make stats`: basic site statistics
+-   See the `Run` section of each lesson's `index.md` file for more specific instructions.
 
 ## Contributions
 

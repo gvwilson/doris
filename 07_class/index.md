@@ -9,6 +9,7 @@
     -   Page elements
     -   Callback to get data (because of filtering and rearrangement)
     -   Helper function to make controls (which are then wrapped as a form)
+-   Again, no changes to [`static/dashboard.js`](./static/dashboard.js)
 
 ## Run
 

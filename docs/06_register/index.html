@@ -26,7 +26,10 @@
 <main>
 <h1>Register Callbacks</h1>
 <ul>
-<li>Let developers define callback functions to get data for particular charts</li>
+<li>Let developers define callback functions to get data for particular charts<ul>
+<li>Getting closer to an application framework that runs application-specific functions</li>
+</ul>
+</li>
 <li>In <a href="./server.py.html"><code>server.py</code></a>:<ul>
 <li>Lookup table <code>Callbacks</code> maps chart name to callback function</li>
 <li>Decorator function <code>register(…)</code> adds entry</li>
@@ -34,7 +37,7 @@
 </ul>
 </li>
 <li>Note that the decorator doesn't change the function: it just adds it to a lookup table</li>
-<li>Getting closer to an application framework that runs application-specific functions</li>
+<li>No changes to <a href="./static/dashboard.js.html"><code>static/dashboard.js</code></a></li>
 </ul>
 <h2>Run</h2>
 <ol>

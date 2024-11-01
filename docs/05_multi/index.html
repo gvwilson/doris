@@ -30,7 +30,7 @@
 <li>Multiple charts with multiple controls</li>
 </ul>
 </li>
-<li>Define functions to create controls and placeholders for charts<ul>
+<li><a href="./server.py.html"><code>server.py</code></a> defines functions to create controls and placeholders for charts<ul>
 <li>Whatever generates the page must create the right controls</li>
 <li>Whatever serves data must format it for the right kind of chart</li>
 </ul>
@@ -38,6 +38,11 @@
 <li>Include a hidden <code>input</code> in the form tying it to its chart<ul>
 <li>Passed to server and returned in data</li>
 <li>Used to select the chart element</li>
+</ul>
+</li>
+<li><a href="./static/dashboard.js.html"><code>static/dashboard.js</code></a> has a new function <code>displayAll(…)</code><ul>
+<li>Find all forms with class <code>controls</code> and send default settings to server
+    to cause initial display of charts</li>
 </ul>
 </li>
 </ul>

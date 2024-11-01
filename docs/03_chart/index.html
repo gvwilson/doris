@@ -27,16 +27,15 @@
 <h1>Create a Chart</h1>
 <ul>
 <li>Use <a href="https://timqian.com/chart.xkcd/">Chart.xkcd</a> to display chart<ul>
-<li>Create a button and an empty SVG</li>
-<li>When button clicked,
-    fetch data and pass to <a href="static/dashboard.js.html"><code>static/dashboard.js</code></a></li>
+<li>Create a button and an empty <a href="../glossary.html#svg">SVG</a></li>
+<li>Fetch data and pass to <code>display(…)</code> in <a href="static/dashboard.js.html"><code>static/dashboard.js</code></a> when button clicked</li>
 </ul>
 </li>
 <li>Modify the <code>/data</code> route in <a href="./server.py.html"><code>server.py</code></a> to return JSON data<ul>
 <li>Format it in the server rather than sending columns and reorganizing in the browser</li>
 </ul>
 </li>
-<li>Note: chart is in a <code>div</code> whose maximum width is set in CSS because that's easier than sizing SVG</li>
+<li>Note: chart is in a <code>div</code> whose maximum width is set in <a href="../glossary.html#css">CSS</a> because that's easier than sizing SVG</li>
 </ul>
 <h2>Run</h2>
 <ol>

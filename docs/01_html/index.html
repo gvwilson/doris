@@ -29,19 +29,19 @@
 <li>Introduce some tools we will use</li>
 <li><a href="server.py.html"><code>server.py</code></a>: <a href="https://flask.palletsprojects.com/">Flask</a> application<ul>
 <li>Use <a href="https://htpy.dev/">htpy</a> to generate HTML</li>
-<li>Convert <a href="../glossary.html#dataframe">dataframe</a> to HTML table and insert directly</li>
-<li>Get the RNG seed from the command line if one is given</li>
+<li>Convert <a href="../glossary.html#dataframe">dataframe</a> to HTML table and insert in page</li>
+<li>Get the random number generation <a href="../glossary.html#rng-seed">seed</a> from the command line if one is given</li>
 </ul>
 </li>
 <li><a href="../shared/datagen.py.html"><code>../shared/datagen.py</code></a>: generate a dataset as <a href="https://pola.rs/">Polars</a> dataframe<ul>
-<li>Female, male, or indeterminate snails</li>
+<li>Sex is female, male, or indeterminate</li>
 <li>Weight depends on sex</li>
 <li>Length correlates with sex and weight</li>
 </ul>
 </li>
-<li><code>./static</code> contains symbolic link to <code>../shared</code><ul>
+<li><code>./static</code> contains <a href="../glossary.html#symlink">symbolic link</a> to <code>../shared</code><ul>
 <li><a href="../glossary.html#static-file">Static files</a> shared between lessons are in <code>../shared</code></li>
-<li>Making it appear under <code>./static</code> simplifies configuration of static directory in <a href="https://flask.palletsprojects.com/">Flask</a></li>
+<li>Making it appear under <code>./static</code> simplifies configuration of <a href="../glossary.html#static-dir">static directory</a> in <a href="https://flask.palletsprojects.com/">Flask</a></li>
 </ul>
 </li>
 </ul>

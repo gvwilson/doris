@@ -26,13 +26,13 @@
 <main>
 <h1>Register Callbacks</h1>
 <ul>
-<li>Let developers define callback functions to get data for particular charts<ul>
-<li>Getting closer to an application framework that runs application-specific functions</li>
+<li>Let developers define <a href="../glossary.html#callback">callback functions</a> to get data for particular charts<ul>
+<li>Getting closer to an <a href="../glossary.html#app-framework">application framework</a> that runs application-specific functions</li>
 </ul>
 </li>
 <li>In <a href="./server.py.html"><code>server.py</code></a>:<ul>
 <li>Lookup table <code>Callbacks</code> maps chart name to callback function</li>
-<li>Decorator function <code>register(…)</code> adds entry</li>
+<li><a href="../glossary.html#decorator">Decorator</a> function <code>register(…)</code> adds entry</li>
 <li><code>get_data(…)</code> uses the chart ID in the query parameters to select a callback function</li>
 </ul>
 </li>

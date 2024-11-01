@@ -1,9 +1,10 @@
 # Select Data
 
 -   [`server.py`](./server.py) creates a [form](g:form) with checkboxes for every sex in the data
--   Add `onload` handler to `body` element to display chart when browser first loads page
+-   Add `onload` [event handler](g:event-handler) to `body` element to display chart when browser first loads page
     -   Use the default settings in the form to ensure consistent behavior
--   [`static/dashboard.js`](static/dashboard.js) turns form data into query parameters and appends them to the URL
+-   [`static/dashboard.js`](static/dashboard.js) turns form data into [query parameters](g:query-param)
+    and appends them to the [URL](g:url)
     -   Checkbox's value is only present if it is ticked
 -   `select_data(…)` in [`../shared/util.py`](../shared/util.py) selects data based on those query parameters
     -   Partition data according to sex

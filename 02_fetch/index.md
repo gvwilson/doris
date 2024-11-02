@@ -3,7 +3,7 @@
 -   [`server.py`](./server.py): page initially has button and empty `div`
 -   When button clicked, JavaScript in [`static/dashboard.js`](static/dashboard.js)
     sends a [`GET`](g:http-get) [request](g:http-request) to a new [route](g:route) in the [Flask][flask] server
-    -   An [asynchronous](g:async-operation) function
+    -   An asynchronous function
 -   Response is [JSON](g:json) containing HTML string representation of table
     -   Have to do some substring operations to extract it from what the dataframe generates
 -   Assign that string to the inner HTML of the `div`

@@ -50,6 +50,13 @@ a {
     color: var(--color-link);
 }
 
+/* Block quotes */
+blockquote {
+    border: var(--border-medium);
+    padding-left: var(--width-page-margin);
+    padding-right: var(--width-page-margin);
+}
+
 /* Page body */
 body {
     background-color: var(--color-background);

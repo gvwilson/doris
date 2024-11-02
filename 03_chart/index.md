@@ -5,7 +5,7 @@
     -   Fetch data and pass to `display(…)` in [`static/dashboard.js`](static/dashboard.js) when button clicked
 -   Modify the `/data` route in [`server.py`](./server.py) to return JSON data
     -   Format it in the server rather than sending columns and reorganizing in the browser
--   Note: chart is in a `div` whose maximum width is set in [CSS](g:css) because that's easier than sizing SVG
+-   Note: chart is in a `div` whose maximum width is set in CSS because that's easier than sizing SVG
 
 ## Run
 

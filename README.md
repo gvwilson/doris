@@ -22,8 +22,8 @@ and shows how to test web applications.
 -   Sabina recently became responsible for maintaining a dashboard application built with [Dash][dash].
     She believes a better understanding of how web applications work
     will help her debug and extend it.
--   Sabina has tried doing asynchronous online courses a couple of times,
-    but strongly prefers learning in real time with other people.
+-   English is Sabina's second language,
+    and she sometimes feels left out when people use slang or programming jargon.
 
 ## Contents
 
@@ -34,6 +34,13 @@ and shows how to test web applications.
 1.  [Handle Multiple Charts](./05_multi/index.md)
 1.  [Register Callbacks](./06_register/index.md)
 1.  [Define a Class](./07_class/index.md)
+
+## Appendices
+
+<ol type="A" markdown="1">
+  <li markdown="1">[HTML and CSS](./aa_htmlcss/index.md)</li>
+  <li markdown="1">[JavaScript](./bb_js/index.md)</li>
+</ol>
 
 [chartxkcd]: https://timqian.com/chart.xkcd/
 [dash]: https://dash.plotly.com/

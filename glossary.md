@@ -34,7 +34,13 @@
 <span id="app-framework">application framework</span>
 :   FIXME
 
+<span id="arrow-notation">arrow notation</span>
+:   FIXME
+
 <span id="async-operation">asynchronous operation</span>
+:   FIXME
+
+<span id="attribute">attribute</span>
 :   FIXME
 
 ## B {: #b}
@@ -47,6 +53,12 @@
 <span id="css">Cascading Style Sheets (CSS)</span>
 :   FIXME
 
+<span id="css-class">CSS class</span>
+:   FIXME
+
+<span id="css-variable">CSS variable</span>
+:   FIXME
+
 ## D {: #d}
 
 <span id="dataframe">dataframe</span>
@@ -55,9 +67,21 @@
 <span id="decorator">decorator</span>
 :   FIXME
 
+<span id="dotted-notation">dotted notation</span>
+:   FIXME
+
 ## E {: #e}
 
+<span id="element">element</span>
+: FIXME
+
+<span id="escape-sequence">escape sequence</span>
+:   FIXME
+
 <span id="event-handler">event handler</span>
+:   FIXME
+
+<span id="external-style-sheet">external style sheet</span>
 :   FIXME
 
 ## F {: #f}
@@ -70,6 +94,9 @@
 ## H {: #h}
 
 <span id="hidden-input">hidden input</span>
+:   FIXME
+
+<span id="html">HyperText Markup Language (HTML)</span>
 :   FIXME
 
 <span id="http-get">HTTP GET</span>
@@ -97,6 +124,9 @@
 
 ## P {: #p}
 
+<span id="promise">promise</span>
+:   FIXME
+
 ## Q {: #q}
 
 <span id="query-param">query parameter</span>
@@ -105,6 +135,9 @@
 ## R {: #r}
 
 <span id="rng-seed">random number generation seed</span>
+:   FIXME
+
+<span id="root-element">root element</span>
 :   FIXME
 
 <span id="route">route (in server)</span>
@@ -121,10 +154,19 @@
 <span id="static-file">static file</span>
 :   FIXME
 
+<span id="string-interpolation">string interpolation</span>
+:   FIXME
+
 <span id="symlink">symbolic link (symlink)</span>
 :   FIXME
 
 ## T {: #t}
+
+<span id="tag">tag</span>
+:   FIXME
+
+<span id="truthiness">truthiness</span>
+:   FIXME
 
 ## U {: #u}
 

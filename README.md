@@ -27,19 +27,20 @@ and shows how to test web applications.
 
 ## Contents
 
-1.  [Generate HTML](./01_html/index.md)
-1.  [Fetch Data](./02_fetch/index.md)
-1.  [Display a Chart](./03_chart/index.md)
-1.  [Select Data](./04_select/index.md)
-1.  [Handle Multiple Charts](./05_multi/index.md)
-1.  [Register Callbacks](./06_register/index.md)
-1.  [Define a Class](./07_class/index.md)
+1.  [Generate HTML](./s01_html/index.md)
+1.  [Fetch Data](./s02_fetch/index.md)
+1.  [Display a Chart](./s03_chart/index.md)
+1.  [Select Data](./s04_select/index.md)
+1.  [Handle Multiple Charts](./s05_multi/index.md)
+1.  [Register Callbacks](./s06_register/index.md)
+1.  [Create a Framework](./s07_framework/index.md)
 
 ## Appendices
 
 <ol type="A" markdown="1">
-  <li markdown="1">[HTML and CSS](./aa_htmlcss/index.md)</li>
-  <li markdown="1">[JavaScript](./bb_js/index.md)</li>
+  <li markdown="1">[HTML and CSS](./x01_htmlcss/index.md)</li>
+  <li markdown="1">[JavaScript](./x02_js/index.md)</li>
+  <li markdown="1">[Flask](./x03_flask/index.md)</li>
 </ol>
 
 [chartxkcd]: https://timqian.com/chart.xkcd/

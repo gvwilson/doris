@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Handle Multiple Charts</title>
+<link href="../shared/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="../shared/dashboard.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<nav>
+<div class="row">
+<div class="col-2 left">
+<a href="../">Home</a>
+</div>
+<div class="col-10 right">
+<a href="../license.html">License</a>
+	  ·
+	  <a href="../bibliography.html">Bibliography</a>
+	  ·
+	  <a href="../glossary.html">Glossary</a>
+</div>
+</div>
+</nav>
+<main>
+<h1>Handle Multiple Charts</h1>
+<ul>
+<li>Generalize what we built in <a href="../s04_select/index.html">the previous lesson</a><ul>
+<li>Multiple charts, each with its own set of controls</li>
+</ul>
+</li>
+<li><a href="./server.py.html"><code>server.py</code></a> defines functions to create controls and placeholders for charts<ul>
+<li>Whatever generates the page must create the right controls</li>
+<li>Whatever serves data must format it for the right kind of chart</li>
+</ul>
+</li>
+<li>Include a <a href="../glossary.html#hidden-input">hidden <code>input</code></a> in the form tying it to its chart<ul>
+<li>Passed to server and returned in data</li>
+<li>Used to select the chart element</li>
+</ul>
+</li>
+<li><a href="./static/dashboard.js.html"><code>static/dashboard.js</code></a> has a new function <code>displayAll(…)</code><ul>
+<li>Find all forms with class <code>controls</code> and send default settings to server
+    to cause initial display of charts</li>
+</ul>
+</li>
+</ul>
+<h2>Run</h2>
+<ol>
+<li><code>python server.py --seed 12345</code></li>
+<li>Go to <a href="http://127.0.0.1/5000">http://127.0.0.1/5000</a></li>
+<li>Change the checkboxes.</li>
+<li>Click the button to fetch data and redisplay chart</li>
+</ol>
+</main>
+<footer>
+<a href="../">Doris</a>
+      copyright © 2024
+      <a href="../contributing.html#contributors">the authors</a>
+</footer>
+</body>
+</html>

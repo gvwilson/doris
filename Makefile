@@ -4,6 +4,11 @@ HTML_IGNORES = 'Attribute "x-' 'Attribute "@click' 'Attribute "file"'
 
 all: commands
 
+## build: convert to HTML
+build:
+	mccole build
+	@touch docs/.nojekyll
+
 ## commands: show available commands (*)
 commands:
 	@grep -h -E '^##' ${MAKEFILE_LIST} \
@@ -17,17 +22,16 @@ clean:
 	@find . -type d -name .pytest_cache | xargs rm -r
 	@find . -type d -name .ruff_cache | xargs rm -r
 
-## build: convert to HTML
-build:
-	mccole render
-	@touch docs/.nojekyll
-
 ## lint: check code and project
 lint:
 	@ruff check --exclude docs .
 	@mccole lint
 	@html5validator --root docs --blacklist templates --ignore ${HTML_IGNORES} \
 	&& echo "HTML checks passed."
+
+## refresh: refresh all file inclusions
+refresh:
+	mccole refresh --files *_*/index.md
 
 ## serve: serve generated HTML
 serve:

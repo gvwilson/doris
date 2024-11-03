@@ -1,5 +1,7 @@
 # Register Callbacks
 
+<p id="terms"></p>
+
 -   Let developers define [callback functions](g:callback) to get data for particular charts
     -   Getting closer to an [application framework](g:app-framework) that runs application-specific functions
 -   In [`server.py`](./server.py):

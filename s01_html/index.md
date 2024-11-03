@@ -1,5 +1,7 @@
 # Generate HTML
 
+<p id="terms"></p>
+
 -   Introduce some tools we will use
 -   [`server.py`](server.py): [Flask][flask] application
     -   Use [htpy][htpy] to generate HTML

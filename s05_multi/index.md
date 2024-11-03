@@ -1,5 +1,7 @@
 # Handle Multiple Charts
 
+<p id="terms"></p>
+
 -   Generalize what we built in [the previous lesson](../s04_select/index.md)
     -   Multiple charts, each with its own set of controls
 -   [`server.py`](./server.py) defines functions to create controls and placeholders for charts

@@ -1,5 +1,7 @@
 # Fetch Data
 
+<p id="terms"></p>
+
 -   [`server.py`](./server.py): page initially has button and empty `div`
 -   When button clicked, JavaScript in [`static/dashboard.js`](static/dashboard.js)
     sends a [`GET`](g:http-get) [request](g:http-request) to a new [route](g:route) in the [Flask][flask] server

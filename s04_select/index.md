@@ -1,5 +1,7 @@
 # Select Data
 
+<p id="terms"></p>
+
 -   [`server.py`](./server.py) creates a [form](g:form) with checkboxes for every sex in the data
 -   Add `onload` [event handler](g:event-handler) to `body` element to display chart when browser first loads page
     -   Use the default settings in the form to ensure consistent behavior

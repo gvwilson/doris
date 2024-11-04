@@ -37,11 +37,13 @@ and shows how to test web applications.
 
 ## Appendices
 
-<ol type="A" markdown="1">
-  <li markdown="1">[HTML and CSS](./x01_htmlcss/index.md)</li>
-  <li markdown="1">[JavaScript](./x02_js/index.md)</li>
-  <li markdown="1">[Flask](./x03_flask/index.md)</li>
-</ol>
+<div class="ol-alpha" markdown="1">
+
+1.  [HTML and CSS](./x01_htmlcss/index.md)
+1.  [JavaScript](./x02_js/index.md)
+1.  [Flask](./x03_flask/index.md)
+
+</div>
 
 [chartxkcd]: https://timqian.com/chart.xkcd/
 [dash]: https://dash.plotly.com/

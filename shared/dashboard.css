@@ -84,6 +84,11 @@ div.chart-container {
     max-width: 40rem;
 }
 
+/* Container for enumerated lists */
+div.ol-alpha > ol {
+    list-style-type: upper-alpha;
+}
+
 /* Footer */
 footer {
     border-top: var(--border-thin);

@@ -43,8 +43,9 @@ class Doris(Flask):
 
     def make_chart(self, name):
         """Create placeholder for chart."""
+        chartName = self.chart_name(name)
         return h.div(".chart-container")[
-            h.svg(f"#chart-{name}", class_="chart"),
+            h.svg(f"#{chartName}", class_="chart"),
         ]
 
     def make_controls(self, name, controls):

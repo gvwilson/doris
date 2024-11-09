@@ -34,6 +34,7 @@ and shows how to test web applications.
 1.  [Handle Multiple Charts](./s05_multi/index.md)
 1.  [Register Callbacks](./s06_register/index.md)
 1.  [Create a Framework](./s07_framework/index.md)
+1.  [Trigger Events](./s08_event/index.md)
 
 ## Appendices
 

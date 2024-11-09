@@ -16,5 +16,5 @@
 
 1.  `python server.py --seed 12345`
 1.  Go to <http://127.0.0.1/5000>
-1.  Change the checkboxes.
+1.  Change the checkboxes
 1.  Click the button to fetch data and redisplay chart

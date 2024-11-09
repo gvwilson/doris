@@ -88,7 +88,7 @@
 <p>© 2024</p>
 ```
 
-- Both will render the same in a browser, but the direct Unicode character is more readable in the source code.
+- Both will render the same in a browser, but the direct Unicode character is more readable in the source code
 
 ## CSS
 

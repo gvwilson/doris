@@ -1,31 +1,4 @@
-<!DOCTYPE html>
-
-<html>
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>s07_framework/doris.py</title>
-<link href="../shared/favicon.ico" rel="icon" type="image/x-icon"/>
-<link href="../shared/dashboard.css" rel="stylesheet" type="text/css"/>
-</head>
-<body>
-<nav>
-<div class="row">
-<div class="col-2 left">
-<a href="../">Home</a>
-</div>
-<div class="col-10 right">
-<a href="../license.html">License</a>
-	  ·
-	  <a href="../bibliography.html">Bibliography</a>
-	  ·
-	  <a href="../glossary.html">Glossary</a>
-</div>
-</div>
-</nav>
-<main>
-<h1>s07_framework/doris.py</h1>
-<pre><code>"""Dashboard application class."""
+"""Dashboard application class."""
 
 from flask import Flask, request
 from flask_cors import CORS
@@ -81,7 +54,6 @@ class Doris(Flask):
         callback = f"display('#{controls_name}'); return false;"
         return h.form(f"#{controls_name}", class_="controls", onsubmit=callback)[
             *controls,
-            h.button(type="submit")["submit"],
             h.input(type="hidden", name=self.chart_key, value=self.chart_name(name)),
         ]
 
@@ -96,6 +68,11 @@ class Doris(Flask):
             h.script(src="/static/dashboard.js"),
         ]
 
+    def make_onclick(self, name):
+        """Make onclick handler for control."""
+        controls_name = self.controls_name(name)
+        return f"display('#{controls_name}')"
+
     def make_page(self, *elements):
         return str(h.html[
             self.make_head(),
@@ -108,12 +85,3 @@ class Doris(Flask):
             self.callbacks[self.chart_name(name)] = func
             return func
         return decorator
-</code></pre>
-</main>
-<footer>
-<a href="../">Doris</a>
-      copyright © 2024
-      <a href="../contributing.html#contributors">the authors</a>
-</footer>
-</body>
-</html>

@@ -3,6 +3,11 @@
 import argparse
 
 
+def ordered_unique(df, col):
+    """Return ordered unique values in dataframe column."""
+    return sorted(df[col].unique())
+
+
 def parse_args():
     """Parse command-line arguments."""
     parser = argparse.ArgumentParser()

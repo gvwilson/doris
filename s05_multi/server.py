@@ -6,7 +6,7 @@ import htpy as h
 from pathlib import Path
 
 from static.shared.datagen import datagen
-from static.shared.util import parse_args, select_data
+from static.shared.util import ordered_unique, parse_args, select_data
 
 
 TITLE = "Doris"
@@ -59,7 +59,7 @@ def make_chart(name):
 def make_controls(data, name):
     """Create form controls for chart."""
     buttons = []
-    for sex in data["sex"].unique().to_list():
+    for sex in ordered_unique(data, "sex"):
         buttons.append(h.label(for_=sex)[sex])
         buttons.append(
             h.input(type="checkbox", id=f"check-{name}-{sex}", name=sex, value=sex, checked=True)

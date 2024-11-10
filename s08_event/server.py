@@ -28,7 +28,7 @@ def create_app(data):
         """Callback handler for example chart."""
         return [
             {"label": key, "data": select_data(data, "sex", key, x="weight", y="length")}
-            for key in request.args.keys()
+            for key in sorted(request.args.keys())
             if not key.startswith("_")
         ]
 

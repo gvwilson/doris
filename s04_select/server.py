@@ -6,7 +6,7 @@ import htpy as h
 from pathlib import Path
 
 from static.shared.datagen import datagen
-from static.shared.util import ordered_unique, parse_args, select_data
+from static.shared.util import ordered_unique, parse_args, select_colors, select_data
 
 
 TITLE = "Doris"
@@ -36,11 +36,14 @@ def create_app(data):
         """Get weight and length by sex as JSON."""
         datasets = [
             {"label": key, "data": select_data(data, "sex", key, x="weight", y="length")}
-            for key in request.args.keys()
+            for key in sorted(request.args.keys())
         ]
         return {
             "data": {
                 "datasets": datasets
+            },
+            "options": {
+                "dataColors": select_colors(data, "sex", [d["label"] for d in datasets])
             }
         }
 

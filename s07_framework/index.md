@@ -1,13 +1,15 @@
 # Create a Framework
 
+<p id="terms"></p>
+
 -   Separate generic/reusable code from application-specific code
--   [`doris.py`](./doris.py) is derived from [Flask][flask] application
+-   [`doris.py`](./doris.py) is derived from [Flask][flask] application class
     -   Store callbacks
     -   Provide a decorator method to register callbacks
-    -   And helper methods to make the page, placeholders for charts, etc.
+    -   And helper methods to make the page, create placeholders for charts, etc.
 -   Application-specific code remains in [`server.py`](./server.py)
-    -   Page elements
-    -   Callback to get data (because of filtering and rearrangement)
+    -   Specify the page elements we want
+    -   Callback to get data (application-specific)
     -   Helper function to make controls (which are then wrapped as a form)
 -   Again, no changes to [`static/dashboard.js`](./static/dashboard.js)
 

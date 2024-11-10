@@ -25,17 +25,18 @@
 </nav>
 <main>
 <h1>Create a Framework</h1>
+
 <ul>
 <li>Separate generic/reusable code from application-specific code</li>
-<li><a href="./doris.py.html"><code>doris.py</code></a> is derived from <a href="https://flask.palletsprojects.com/">Flask</a> application<ul>
+<li><a href="./doris.py.html"><code>doris.py</code></a> is derived from <a href="https://flask.palletsprojects.com/">Flask</a> application class<ul>
 <li>Store callbacks</li>
 <li>Provide a decorator method to register callbacks</li>
-<li>And helper methods to make the page, placeholders for charts, etc.</li>
+<li>And helper methods to make the page, create placeholders for charts, etc.</li>
 </ul>
 </li>
 <li>Application-specific code remains in <a href="./server.py.html"><code>server.py</code></a><ul>
-<li>Page elements</li>
-<li>Callback to get data (because of filtering and rearrangement)</li>
+<li>Specify the page elements we want</li>
+<li>Callback to get data (application-specific)</li>
 <li>Helper function to make controls (which are then wrapped as a form)</li>
 </ul>
 </li>

@@ -25,11 +25,19 @@
 </nav>
 <main>
 <h1>Trigger Events</h1>
+
 <ul>
-<li>Eliminate need for explicit form submission by adding event handlers to checkboxes</li>
-<li>Remove <code>submit</code> handler from form (but keep ID)</li>
-<li>Add <code>make_onclick(…)</code> to <a href="./doris.py.html"><code>doris.py</code></a> to create <code>onclick</code> event handler</li>
-<li>Add <code>onclick=…</code> when creating control in <a href="./server.py.html"><code>server.py</code></a></li>
+<li>Eliminate clumsiness of explicit form submission by adding on-click event handlers to checkboxes</li>
+<li>Remove <code>submit</code> handler from form<ul>
+<li>But keep the ID so that <code>display(…)</code> knows what data to submit</li>
+</ul>
+</li>
+<li>Add <code>make_onclick(…)</code> method to <a href="./doris.py.html"><code>doris.py</code></a> to create <code>onclick</code> event handler<ul>
+<li>Just a call to <code>display(…)</code> with the name of the form</li>
+<li>Form still used to group controls</li>
+</ul>
+</li>
+<li>Add <code>onclick=…</code> attribute when creating control <code>make_controls(…)</code> in <a href="./server.py.html"><code>server.py</code></a></li>
 </ul>
 <h2>Run</h2>
 <ol>

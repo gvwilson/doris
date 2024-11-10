@@ -5,8 +5,7 @@ from flask_cors import CORS
 import htpy as h
 from pathlib import Path
 
-from static.shared.datagen import datagen
-from static.shared.util import parse_args
+from static.shared import datagen, util
 
 
 TITLE = "Doris"
@@ -65,6 +64,6 @@ def make_head():
 
 if __name__ == "__main__":
     options = parse_args()
-    data = datagen(options.seed)
+    data = datagen.generate(options.seed)
     app = create_app(data)
     app.run()

@@ -4,9 +4,7 @@ from flask import request
 import htpy as h
 from pathlib import Path
 
-from static.shared.datagen import datagen
-from static.shared.util import ordered_unique, parse_args, select_data
-
+from static.shared import datagen, util
 from doris import Doris
 
 
@@ -27,9 +25,8 @@ def create_app(data):
     def handle_example(data):
         """Callback handler for example chart."""
         return [
-            {"label": key, "data": select_data(data, "sex", key, x="weight", y="length")}
-            for key in sorted(request.args.keys())
-            if not key.startswith("_")
+            {"label": key, "data": util.select_data(data, "sex", key, x="weight", y="length")}
+            for key in util.interesting_keys(request)
         ]
 
     return app
@@ -38,7 +35,7 @@ def create_app(data):
 def make_controls(app, data, name):
     """Create form controls for chart."""
     buttons = []
-    for sex in ordered_unique(data, "sex"):
+    for sex in util.ordered_unique(data, "sex"):
         buttons.append(h.label(for_=sex)[sex])
         buttons.append(
             h.input(type="checkbox", id=f"check-{name}-{sex}", name=sex, value=sex, checked=True)
@@ -47,7 +44,7 @@ def make_controls(app, data, name):
 
 
 if __name__ == "__main__":
-    options = parse_args()
-    data = datagen(options.seed)
+    options = util.parse_args()
+    data = datagen.generate(options.seed)
     app = create_app(data)
     app.run()

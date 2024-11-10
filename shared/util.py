@@ -9,6 +9,11 @@ COLORS = [
 ]
 
 
+def interesting_keys(request):
+    """Return ordered interesting keys."""
+    return [key for key in sorted(request.args.keys()) if not key.startswith("_")]
+
+
 def ordered_unique(df, col):
     """Return ordered unique values in dataframe column."""
     return sorted(df[col].unique())

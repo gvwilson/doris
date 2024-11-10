@@ -5,8 +5,7 @@ from flask_cors import CORS
 import htpy as h
 from pathlib import Path
 
-from static.shared.datagen import datagen
-from static.shared.util import ordered_unique, parse_args, select_colors, select_data
+from static.shared import datagen, util
 
 
 TITLE = "Doris"
@@ -25,9 +24,8 @@ def register(name):
 def handle_top(data):
     """Callback handler for top chart."""
     return [
-        {"label": key, "data": select_data(data, "sex", key, x="weight", y="length")}
-        for key in sorted(request.args.keys())
-        if not key.startswith("_")
+        {"label": key, "data": util.select_data(data, "sex", key, x="weight", y="length")}
+        for key in util.interesting_keys(request)
     ]
 
 
@@ -35,9 +33,8 @@ def handle_top(data):
 def handle_bottom(data):
     """Callback handler for bottom chart."""
     return [
-        {"label": key, "data": select_data(data, "sex", key, x="length", y="weight")}
-        for key in sorted(request.args.keys())
-        if not key.startswith("_")
+        {"label": key, "data": util.select_data(data, "sex", key, x="length", y="weight")}
+        for key in util.interesting_keys(request)
     ]
 
 
@@ -71,7 +68,7 @@ def create_app(data):
                 "datasets": datasets
             },
             "options": {
-                "dataColors": select_colors(data, "sex", [d["label"] for d in datasets])
+                "dataColors": util.select_colors(data, "sex", [d["label"] for d in datasets])
             }
         }
 
@@ -88,7 +85,7 @@ def make_chart(name):
 def make_controls(data, name):
     """Create form controls for chart."""
     buttons = []
-    for sex in ordered_unique(data, "sex"):
+    for sex in util.ordered_unique(data, "sex"):
         buttons.append(h.label(for_=sex)[sex])
         buttons.append(
             h.input(type="checkbox", id=f"check-{name}-{sex}", name=sex, value=sex, checked=True)
@@ -115,7 +112,7 @@ def make_head():
 
 
 if __name__ == "__main__":
-    options = parse_args()
-    data = datagen(options.seed)
+    options = util.parse_args()
+    data = datagen.generate(options.seed)
     app = create_app(data)
     app.run()

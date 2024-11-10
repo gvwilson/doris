@@ -26,7 +26,7 @@ LENGTH_STD = 0.08
 PRECISION = 2
 
 
-def datagen(seed):
+def generate(seed):
     """Generate data."""
     random.seed(seed)
     data = []
@@ -55,5 +55,5 @@ def gen_weight(sex):
 
 if __name__ == "__main__":
     seed = int(sys.argv[1]) if len(sys.argv) > 1 else None
-    df = datagen(seed)
+    df = generate(seed)
     df.write_csv(sys.stdout)

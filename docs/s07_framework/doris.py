@@ -4,6 +4,8 @@ from flask import Flask, request
 from flask_cors import CORS
 import htpy as h
 
+from static.shared.util import select_colors
+
 
 CHART_KEY = "_chart"
 TITLE = "Doris"
@@ -30,6 +32,9 @@ class Doris(Flask):
                 self.chart_key: chartId,
                 "data": {
                     "datasets": datasets
+                },
+                "options": {
+                    "dataColors": select_colors(data, "sex", [d["label"] for d in datasets])
                 }
             }
 

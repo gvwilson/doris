@@ -5,7 +5,7 @@ import htpy as h
 from pathlib import Path
 
 from static.shared.datagen import datagen
-from static.shared.util import parse_args, select_data
+from static.shared.util import ordered_unique, parse_args, select_data
 
 from doris import Doris
 
@@ -28,7 +28,7 @@ def create_app(data):
         """Callback handler for example chart."""
         return [
             {"label": key, "data": select_data(data, "sex", key, x="weight", y="length")}
-            for key in request.args.keys()
+            for key in sorted(request.args.keys())
             if not key.startswith("_")
         ]
 
@@ -38,7 +38,7 @@ def create_app(data):
 def make_controls(app, data, name):
     """Create form controls for chart."""
     buttons = []
-    for sex in data["sex"].unique().to_list():
+    for sex in ordered_unique(data, "sex"):
         buttons.append(h.label(for_=sex)[sex])
         buttons.append(
             h.input(

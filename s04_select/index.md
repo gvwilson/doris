@@ -10,7 +10,9 @@
     -   Checkbox's value is only present if it is ticked
 -   `select_data(…)` in [`../shared/util.py`](../shared/util.py) selects data based on those query parameters
     -   Partition data according to sex
-    -   Doesn't specify colors, so point colors may change when data subsetted
+-   First version didn't specify colors, so point colors changed when data subsetted
+    -   Selector buttons would also change order
+    -   Solution is to order everything explicitly
 
 ## Run
 
